@@ -5,60 +5,25 @@
  */
 function secretsanta(items) {
 
-	/**
-	 * shellsort - sorts the items
-	 * @param itemsarr
-	 */
-	function shellsort(itemsarr) {
-		var h = 1;
-
-		var n = itemsarr.length;
-
-		while (h < n) {
-			h = h * 3 + 1;
-		}
-
-		h = Math.floor(n / 3);
-		var c, j;
-
-		while (h > 0) {
-			for (var i = h; i < n; i++) {
-				c = itemsarr[i];
-				j = i;
-				while (j >= h && itemsarr[j - h].order > c.order) {
-					itemsarr[j] = itemsarr[j - h];
-					j           = j - h;
-				}
-				itemsarr[j] = c;
-			}
-			h = Math.floor(h / 2);
-		}
-
+	var encapsulateditems = []
+	while (items.length > 0) {
+		var r    = Math.floor(Math.random() * items.length);
+		var item = items.splice(r, 1)[0];
+		encapsulateditems.push(item);
 	}
-
-	var encapsulateditems = [];
-	for (i of items) {
-		var ei = new Object();
-		ei     = {
-			name: i,
-			order: Math.random() * 100
-		}
-		encapsulateditems.push(ei);
-	}
-	shellsort(encapsulateditems);
 
 	var res = [];
 	for (var i = 0; i < encapsulateditems.length - 1; i++) {
 		res.push({
-			src: encapsulateditems[i].name,
-			dst: encapsulateditems[i + 1].name
+			src: encapsulateditems[i],
+			dst: encapsulateditems[i + 1]
 		});
 
 
 	}
 	res.push({
-		src: encapsulateditems[encapsulateditems.length - 1].name,
-		dst: encapsulateditems[0].name
+		src: encapsulateditems[encapsulateditems.length - 1],
+		dst: encapsulateditems[0]
 	});
 
 
