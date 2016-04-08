@@ -3,7 +3,7 @@
  * @param items - an array of names
  * @returns {Array} - an array of 2-tuples (the one who gives the gift, the one who takes it
  */
-module.exports = function (items) {
+function secretsanta(items) {
 
 	/**
 	 * shellsort - sorts the items
@@ -64,4 +64,5 @@ module.exports = function (items) {
 
 	return res;
 }
-//	var items = [{name: 'Arnon'}, {name: 'Arnonzin'}, {name: 'Rafael'}, {name: 'Roanne'}, {name: 'Montanha'}, {name: 'Marcella'}, {name: 'Guilherme'}, {name: 'Rogerio'}, {name: 'Gisele'}, {name: 'Pedro'}, {name: 'P.O.'}, {name: 'Tania'}, {name: 'Ceci'}, {name: 'RodGui'}, {name: 'Ana'}, {name: 'Miguel'}];
+
+module.exports = secretsanta;
