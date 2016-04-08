@@ -1,0 +1,11 @@
+{
+  "name"        : "ps.santasecret",
+  "version"     : "0.0.1",
+  "dependencies": {
+    "chai" : "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "scripts"     : {
+    "docs": "jsdoc2md *.js > api.md"
+  }
+}
